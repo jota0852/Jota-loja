@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080808">
+<meta name="description" content="JOTA — gadgets inteligentes e soluções práticas para o dia a dia.">
+<title>JOTA — Gadgets para viver melhor</title>
+<style>
+:root{--bg:#080808;--panel:#111;--white:#f7f7f7;--muted:#aaa;--line:#292929;--accent:#b9a7ff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--white);font-family:Inter,Arial,sans-serif}a{color:inherit;text-decoration:none}button,input,select{font:inherit}
+.topline{padding:9px 16px;text-align:center;background:linear-gradient(90deg,#fff,#b9a7ff,#fff);color:#090909;font-size:12px;font-weight:800;letter-spacing:.08em}
+header{position:sticky;top:0;z-index:5;background:#080808ed;backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{max-width:1200px;margin:auto;padding:18px 22px;display:flex;align-items:center;gap:20px}.logo{font-size:27px;font-weight:950;letter-spacing:.16em}.logo span{color:#b9a7ff}.navlinks{display:flex;gap:22px;margin-left:auto;color:#ddd;font-size:14px}.cartbtn,.primary,.secondary{border:0;cursor:pointer;font-weight:800;border-radius:999px;padding:12px 18px}.cartbtn{background:#fff;color:#080808}.hero{max-width:1200px;margin:28px auto 0;padding:25px 22px}.hero-inner{position:relative;overflow:hidden;min-height:430px;border:1px solid #34303f;border-radius:28px;padding:clamp(28px,6vw,72px);display:flex;align-items:center;background:radial-gradient(ellipse at 82% 35%,#57478b 0,transparent 33%),radial-gradient(ellipse at 90% 90%,#292929 0,transparent 40%),linear-gradient(120deg,#161616,#090909 65%)}.hero-inner:after{content:"J";position:absolute;right:7%;top:-40px;font-size:clamp(240px,40vw,500px);font-weight:950;line-height:1;color:#ffffff09;pointer-events:none}.hero-copy{position:relative;z-index:1;max-width:590px}.eyebrow{font-size:12px;letter-spacing:.2em;color:#c5b8ff;font-weight:900;text-transform:uppercase}.hero h1{font-size:clamp(42px,7vw,76px);line-height:.98;letter-spacing:-.055em;margin:18px 0}.hero p{color:#c7c7c7;font-size:17px;line-height:1.65;max-width:490px}.primary{background:linear-gradient(100deg,#fff,#c9baff);color:#080808;margin-top:12px}.secondary{background:#202020;color:#fff;border:1px solid #3a3a3a;margin-top:12px}
+.trust{max-width:1150px;margin:0 auto;padding:10px 22px 28px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.trust div{border:1px solid var(--line);border-radius:14px;padding:16px;color:#ddd;font-size:13px}.trust b{display:block;color:#fff;margin-bottom:5px}
+section{max-width:1200px;margin:auto;padding:28px 22px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin-bottom:20px}.section-head h2{font-size:clamp(26px,4vw,38px);letter-spacing:-.04em;margin:0}.section-head p{margin:7px 0 0;color:var(--muted);font-size:14px}.tools{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0 22px}.tools input,.tools select{background:#141414;color:white;border:1px solid #343434;border-radius:12px;padding:12px 14px;min-width:180px}.tools input{flex:1}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.product{background:linear-gradient(145deg,#151515,#0d0d0d);border:1px solid #292929;border-radius:18px;overflow:hidden;transition:transform .2s,border-color .2s}.product:hover{transform:translateY(-4px);border-color:#6e609e}.prod-img{height:190px;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 35%,#343044,#171717 62%);font-size:68px}.prod-img img{width:100%;height:100%;object-fit:cover}.prod-body{padding:16px}.tag{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#c7baff;font-weight:900}.product h3{font-size:16px;line-height:1.35;margin:8px 0;min-height:42px}.desc{color:#aaa;font-size:12px;line-height:1.5;min-height:36px}.price{font-size:21px;font-weight:900;margin:14px 0 10px}.old{font-size:12px;color:#888;text-decoration:line-through;margin-left:6px;font-weight:400}.add{width:100%;border:1px solid #555;background:#fff;color:#080808;border-radius:10px;padding:11px;font-weight:900;cursor:pointer}.add:hover{background:#d9d0ff}
+.banner{margin-top:20px;padding:28px;border:1px solid #383142;border-radius:20px;background:linear-gradient(110deg,#1b1822,#111);display:flex;justify-content:space-between;gap:20px;align-items:center}.banner h3{font-size:25px;margin:0 0 8px}.banner p{margin:0;color:#bbb;font-size:14px}
+footer{margin-top:35px;border-top:1px solid var(--line);padding:35px 22px;color:#aaa}.foot{max-width:1150px;margin:auto;display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap}.foot strong{color:white;letter-spacing:.15em}.fine{font-size:12px;line-height:1.6;max-width:600px}
+.whatsapp{position:fixed;right:18px;bottom:18px;z-index:8;border:0;border-radius:999px;background:#25d366;color:#04220e;font-weight:900;padding:15px 18px;box-shadow:0 8px 30px #0009;cursor:pointer}
+.overlay{display:none;position:fixed;inset:0;background:#000b;z-index:10;justify-content:flex-end}.overlay.open{display:flex}.drawer{width:min(440px,100%);height:100%;background:#101010;border-left:1px solid #333;padding:22px;overflow:auto}.drawer-head{display:flex;justify-content:space-between;align-items:center}.drawer h2{margin:5px 0 20px}.close{background:#222;color:white;border:1px solid #444;border-radius:9px;padding:8px 12px;cursor:pointer}.cartline{display:grid;grid-template-columns:1fr auto;gap:8px;border-bottom:1px solid #333;padding:15px 0}.qty{display:flex;align-items:center;gap:8px;margin-top:8px}.qty button{background:#242424;color:white;border:1px solid #444;border-radius:7px;padding:3px 9px}.total{display:flex;justify-content:space-between;font-size:20px;font-weight:900;padding:20px 0}.checkout{width:100%;border:0;border-radius:12px;background:#25d366;color:#06210d;padding:14px;font-weight:900;cursor:pointer}.empty{color:#999;padding:25px 0}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.navlinks{display:none}.hero-inner{min-height:390px}.prod-img{height:165px}}
+@media(max-width:480px){.grid{gap:10px}.prod-img{height:130px;font-size:50px}.prod-body{padding:12px}.product h3{font-size:14px}.desc{font-size:11px}.price{font-size:18px}.trust{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column}.hero{padding:14px 12px 0}.hero-inner{padding:25px 22px}.nav{padding:15px}.logo{font-size:23px}}
+</style>
+</head>
+<body>
+<div class="topline">JOTA • TECNOLOGIA ÚTIL, VIDA MAIS FÁCIL</div>
+<header><div class="nav"><a class="logo" href="#">JOTA<span>.</span></a><nav class="navlinks"><a href="#produtos">Produtos</a><a href="#vantagens">Por que JOTA?</a><a href="#sobre">Sobre</a></nav><button class="cartbtn" onclick="openCart()">Sacola (<span id="cartcount">0</span>)</button></div></header>
+<main>
+<div class="hero"><div class="hero-inner"><div class="hero-copy"><div class="eyebrow">Pequenas ideias. Grandes diferenças.</div><h1>Seu dia a dia,<br>mais inteligente.</h1><p>Gadgets e soluções práticas para deixar sua casa mais funcional, moderna e confortável. Descubra algo novo na JOTA.</p><a href="#produtos"><button class="primary">Explorar produtos ↗</button></a></div></div></div>
+<div class="trust" id="vantagens"><div><b>✦ Produtos selecionados</b>Utilidade de verdade para sua rotina.</div><div><b>◈ Compra simples</b>Escolha seus produtos e envie o pedido pelo WhatsApp.</div><div><b>⌁ Atendimento próximo</b>Tire dúvidas diretamente com a equipe JOTA.</div></div>
+<section id="produtos"><div class="section-head"><div><h2>Achados inteligentes<span style="color:#b9a7ff">.</span></h2><p>Produtos úteis para transformar sua rotina.</p></div></div>
+<div class="tools"><input id="search" type="search" placeholder="Buscar produtos..." oninput="renderProducts()"><select id="category" onchange="renderProducts()"><option value="Todos">Todas as categorias</option><option>Casa inteligente</option><option>Organização</option><option>Iluminação</option><option>Acessórios</option></select></div>
+<div class="grid" id="products"></div>
+<div class="banner"><div><h3>Achou o que precisava?</h3><p>Monte sua sacola e envie seu pedido em poucos cliques.</p></div><button class="primary" onclick="openCart()">Ver minha sacola →</button></div>
+</section>
+<section id="sobre"><div class="section-head"><div><h2>Mais praticidade. Menos complicação.</h2><p>A JOTA reúne ideias e acessórios que ajudam a aproveitar melhor cada espaço e cada momento.</p></div></div></section>
+</main>
+<footer><div class="foot"><div><strong>JOTA.</strong><p>Gadgets para viver melhor.</p></div><div class="fine">Os produtos, preços e imagens desta versão são exemplos demonstrativos e devem ser conferidos antes de publicar a loja para clientes. A JOTA não processa pagamentos nesta versão; os pedidos são enviados para atendimento via WhatsApp.</div><div class="fine">© <span id="year"></span> JOTA. Todos os direitos reservados.</div></div></footer>
+<button class="whatsapp" onclick="contactWhatsApp()">WhatsApp ↗</button>
+<div class="overlay" id="overlay" onclick="if(event.target===this)closeCart()"><aside class="drawer"><div class="drawer-head"><div><div class="tag">JOTA SHOPPING</div><h2>Sua sacola</h2></div><button class="close" onclick="closeCart()">Fechar ✕</button></div><div id="cartitems"></div><div class="total"><span>Total estimado</span><span id="total">R$ 0,00</span></div><button class="checkout" onclick="checkout()">Enviar pedido pelo WhatsApp</button><p class="fine">O pedido será confirmado pelo atendimento. Frete e disponibilidade devem ser combinados.</p></aside></div>
+<script>
+const WHATSAPP_NUMBER = "SEU_NUMERO_COM_DDI"; // Troque por exemplo por 5541999999999
+const products = [
+{id:1,name:"Lixeira automática com sensor",cat:"Organização",price:129.90,old:159.90,emoji:"🗑️",tag:"Mais praticidade",desc:"Abertura por sensor para uma rotina mais higiênica."},
+{id:2,name:"Tomada inteligente Wi-Fi",cat:"Casa inteligente",price:59.90,old:79.90,emoji:"🔌",tag:"Casa conectada",desc:"Controle aparelhos compatíveis pelo celular."},
+{id:3,name:"Fita LED decorativa",cat:"Iluminação",price:49.90,old:69.90,emoji:"💡",tag:"Clima perfeito",desc:"Iluminação decorativa para deixar o ambiente com sua cara."},
+{id:4,name:"Luminária LED recarregável",cat:"Iluminação",price:69.90,old:89.90,emoji:"🔦",tag:"Útil todo dia",desc:"Luz prática para mesa, armário ou cantinho de leitura."},
+{id:5,name:"Mini aspirador portátil",cat:"Acessórios",price:89.90,old:119.90,emoji:"🌀",tag:"Limpeza rápida",desc:"Ajuda na limpeza de pequenas superfícies e cantos."},
+{id:6,name:"Organizador de cabos",cat:"Organização",price:19.90,old:29.90,emoji:"〰️",tag:"Tudo no lugar",desc:"Deixe sua mesa e seus fios mais organizados."},
+{id:7,name:"Sensor de presença LED",cat:"Casa inteligente",price:39.90,old:54.90,emoji:"✨",tag:"Praticidade",desc:"Iluminação acionada por movimento, conforme o modelo."},
+{id:8,name:"Suporte ajustável para celular",cat:"Acessórios",price:34.90,old:49.90,emoji:"📱",tag:"Conforto",desc:"Mais conforto para assistir, estudar ou fazer chamadas."}
+];
+let cart = {};
+const brl = n => n.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+function renderProducts(){
+ const q=document.getElementById("search").value.toLowerCase(), c=document.getElementById("category").value;
+ const list=products.filter(p=>(c==="Todos"||p.cat===c)&&(p.name+" "+p.desc+" "+p.cat).toLowerCase().includes(q));
+ document.getElementById("products").innerHTML=list.map(p=>`<article class="product"><div class="prod-img" aria-label="${p.name}">${p.emoji}</div><div class="prod-body"><div class="tag">${p.tag}</div><h3>${p.name}</h3><div class="desc">${p.desc}</div><div class="price">${brl(p.price)} <span class="old">${brl(p.old)}</span></div><button class="add" onclick="addToCart(${p.id})">Adicionar à sacola +</button></div></article>`).join("")||"<p>Nenhum produto encontrado.</p>";
+}
+function addToCart(id){cart[id]=(cart[id]||0)+1;updateCart(); }
+function updateCart(){
+ const count=Object.values(cart).reduce((a,b)=>a+b,0);
+ document.getElementById("cartcount").textContent=count;
+ const entries=Object.entries(cart).filter(([id,qty])=>qty>0);
+ document.getElementById("cartitems").innerHTML=entries.length?entries.map(([id,qty])=>{const p=products.find(x=>x.id==id);return `<div class="cartline"><div><b>${p.name}</b><div>${brl(p.price)} cada</div><div class="qty"><button onclick="changeQty(${id},-1)">−</button><span>${qty}</span><button onclick="changeQty(${id},1)">+</button></div></div><b>${brl(p.price*qty)}</b></div>`}).join(""):'<div class="empty">Sua sacola está vazia. Explore os produtos e adicione seus favoritos.</div>';
+ document.getElementById("total").textContent=brl(entries.reduce((s,[id,qty])=>s+products.find(p=>p.id==id).price*qty,0));
+}
+function changeQty(id,d){cart[id]=(cart[id]||0)+d;if(cart[id]<=0)delete cart[id];updateCart()}
+function openCart(){document.getElementById("overlay").classList.add("open");updateCart()}
+function closeCart(){document.getElementById("overlay").classList.remove("open")}
+function message(){
+ const entries=Object.entries(cart).filter(([id,qty])=>qty>0);
+ if(!entries.length)return "";
+ const lines=entries.map(([id,qty])=>{const p=products.find(x=>x.id==id);return `• ${p.name} x${qty} — ${brl(p.price*qty)}`});
+ const total=entries.reduce((s,[id,qty])=>s+products.find(p=>p.id==id).price*qty,0);
+ return `Olá! Quero fazer um pedido na JOTA:\\n\\n${lines.join("\\n")}\\n\\nTotal estimado: ${brl(total)}\\n\\nPor favor, confirme disponibilidade, frete e formas de pagamento.`;
+}
+function sendWhatsApp(msg){
+ if(WHATSAPP_NUMBER==="SEU_NUMERO_COM_DDI"){alert("Antes de usar o WhatsApp, abra o arquivo index.html e troque SEU_NUMERO_COM_DDI pelo número da loja com código do país e DDD. Exemplo: 5541999999999.");return}
+ window.open("https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent(msg),"_blank");
+}
+function checkout(){const msg=message();if(!msg){alert("Adicione pelo menos um produto à sacola.");return}sendWhatsApp(msg)}
+function contactWhatsApp(){sendWhatsApp("Olá! Vim pelo site da JOTA e gostaria de conhecer os produtos.")}
+document.getElementById("year").textContent=new Date().getFullYear();
+renderProducts();updateCart();
+</script>
+</body></html>
